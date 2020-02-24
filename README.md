@@ -25,9 +25,9 @@ On right top of navbar username and avatar can be seen. From there he can route 
 and after successful build, open the browser and hit `localhost:8080`
 
 
-
-#####`NOte:`This is build as a web application. It is not responsive.#####
-
- 
+###Backlogs###
+* Application is not responsive
+* Deployment is not set to perticular domain.
+* Payment is a dummy form
   
 
