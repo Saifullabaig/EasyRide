@@ -1,0 +1,23 @@
+.form-container {
+    padding: 16px;
+  }
+  
+  /* .example-container {
+    display: flex;
+    flex-direction: column;
+  } */
+  
+  .example-container > * {
+    width: 70%;
+  }
+  .spinner {
+    border-radius: 10px;
+    height: 70px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    width: 70px;
+    z-index: 3;
+    opacity: 1;
+  }

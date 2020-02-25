@@ -1,0 +1,26 @@
+.toolbar {
+  height: 70px;
+  color: white;
+  font-weight: 600;
+  font-size: 40px;
+}
+.Menu {
+  color: white;
+  /* line-height: 18px; */
+}
+
+.app-name {
+  color: white;
+  margin-left: 2px;
+  margin-top: 5px;
+  background-color: #03a9f4;
+}
+
+.header-menu {
+  margin-top: 6px;
+  margin-left: 2px;
+}
+
+.title {
+  cursor: pointer;
+}

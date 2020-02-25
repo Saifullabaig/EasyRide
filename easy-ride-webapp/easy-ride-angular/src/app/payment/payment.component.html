@@ -1,0 +1,59 @@
+<div class="spinner" *ngIf="showLoader">
+    <mat-spinner [diameter]="100"></mat-spinner>
+</div>
+  
+<div fxLayout="row" fxLayoutAlign="center center" class="form-container">
+    <div fxFlex="50%">
+    <mat-card [class.mat-elevation-z8]="!isActive">
+        <div fxLayoutAlign="center">
+            <img src="../../assets/images/cardlogos.jpeg" alt="Scheme" width="65%">
+        </div>
+        <form [formGroup]="cardForm" novalidate (ngSubmit)="payment(cardForm.value)">
+            <mat-card-content >    
+                <div class="example-container" fxLayoutGap="10px"  fxLayout="column" fxLayoutAlign="space-around center">
+                <mat-form-field>
+                    <input matInput type="text" placeholder="Name on Card" formControlName="name" id="name">
+                    <mat-error *ngIf="hasError('name', 'required')">Name is required</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput type="number" placeholder="Card Number" formControlName="number" id="number" maxlength="16">
+                    <mat-error *ngIf="hasError('number', 'required')">Number is required</mat-error>
+                </mat-form-field>
+                
+                <!-- <div fxLayout="row" fxLayoutAlign="space-around center"> -->
+                    <mat-form-field>
+                            <mat-label>Expiry Date</mat-label>
+                            <!-- <input matInput type="date" placeholder="MM/YY" formControlName="date" id="date"> -->
+                            <!-- <mat-form-field> -->
+                                    <!-- <mat-label>Month and Year</mat-label> -->
+                                    <input matInput [matDatepicker]="dp" [formControl]="date" [min]="currentDate" placeholder="MM/YY">
+                                    <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+                                    <mat-datepicker #dp
+                                                    startView="multi-year"
+                                                    (yearSelected)="chosenYearHandler($event)"
+                                                    (monthSelected)="chosenMonthHandler($event, dp)"
+                                                    panelClass="example-month-picker">
+                                    </mat-datepicker>
+                                  <!-- </mat-form-field> -->
+                            <!-- <mat-error *ngIf="hasError('date', 'required')">Expiry Date is required</mat-error> -->
+                    </mat-form-field>
+                    <mat-form-field>
+                            <input matInput type="password" placeholder="CVV" formControlName="cvv" id="cvv" maxlength="3">
+                            <mat-error *ngIf="hasError('cvv', 'required')">CVV is required</mat-error>  
+                    </mat-form-field>
+                <!-- </div> -->
+            </div>
+
+        </mat-card-content>
+        <mat-card-actions align="center">
+                            <button mat-raised-button color="primary" [disabled]="!cardForm.valid">Pay {{ priceRate | currency: "&#8377;" }}</button>
+                            <button type="button" mat-raised-button color="warn" (click)="onCancel()">Cancel</button>
+        </mat-card-actions>
+        
+    </form>
+
+    </mat-card>
+</div>
+</div>
+
+

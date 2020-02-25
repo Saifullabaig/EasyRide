@@ -1,0 +1,25 @@
+<mat-card class="example-card">
+  <div fxLayout="row wrap" fxLayoutGap="10px">
+    <div fxFlex="14" mat-card-avatar class="example-header-image"></div>
+    <div fxFlex="35">
+      <mat-card-title>{{ item.driverName }}</mat-card-title>
+      <mat-card-subtitle
+        ><span class="stars alignright">
+          <span [ngStyle]="{ width: cr }"></span> </span
+      ></mat-card-subtitle>
+    </div>
+    <div fxFlex="20">
+      <div class="price">Rate/km</div>
+      <div>{{ price | currency: "&#8377;" }}</div>
+    </div>
+    <div fxFlex="20">
+      <button *ngIf="status" mat-fab color="primary" (click)="booking()">
+        Book
+      </button>
+      <button *ngIf="!status" mat-fab color="warn" (click)="cancel()">
+        cancel
+      </button>
+    </div>
+  </div>
+  <mat-card-actions> </mat-card-actions>
+</mat-card>

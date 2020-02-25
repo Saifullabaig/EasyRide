@@ -1,0 +1,63 @@
+<div class="card" [ngStyle]="{ 'background-image': getUrl() }">
+  <div fxLayoutAlign="center">
+    <mat-card class="example-card" fxFlex="50">
+      <form [formGroup]="form">
+        <mat-tab-group>
+          <mat-tab label=" One Way Trip">
+            <div fxLayout="row" fxLayoutAlign="space-between start">
+              <mat-form-field appearance="standard" fxFlex="35">
+                <mat-label>From</mat-label>
+                <input matInput formControlName="city_from" />
+              </mat-form-field>
+              <mat-icon class="icon" color="primary">arrow_right_alt</mat-icon>
+
+              <mat-form-field appearance="standard" fxFlex="32">
+                <mat-label>To</mat-label>
+                <input
+                  matInput
+                  placeholder="please search"
+                  formControlName="city"
+                  readonly="readonly"
+                />
+              </mat-form-field>
+              <button mat-icon-button class="search">
+                <mat-icon (click)="openDialog()">search</mat-icon>
+              </button>
+            </div>
+
+            <div fxLayout="row" fxLayoutAlign="space-between start">
+              <mat-form-field fxFlex="35">
+                <mat-label>Choose a date</mat-label>
+                <input
+                  matInput
+                  [matDatepicker]="picker"
+                  [min]="todaydate"
+                  formControlName="tripDate"
+                />
+                <mat-datepicker-toggle
+                  matSuffix
+                  [for]="picker"
+                ></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+              <mat-form-field fxFlex="46">
+                <mat-label>Time slot</mat-label>
+                <mat-select formControlName="timeSlot">
+                  <mat-option *ngFor="let time of time" [value]="time.value">
+                    {{ time.viewValue }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div fxLayout="row" fxLayoutAlign="end end">
+              <button mat-raised-button color="primary" (click)="show()">
+                Search
+              </button>
+            </div>
+          </mat-tab>
+          <!-- <mat-tab label="Round Trip">hello </mat-tab> -->
+        </mat-tab-group>
+      </form>
+    </mat-card>
+  </div>
+</div>

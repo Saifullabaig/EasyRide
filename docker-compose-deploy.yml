@@ -1,0 +1,33 @@
+version: '3.7'
+services:
+  naming-server:
+    image: sr2010sj/naming-server:latest
+    ports: 
+        - "8761:8761"
+  api-gateway-server:
+    image: sr2010sj/api-gateway-server:latest
+    ports: 
+        - "8080:8080"
+    depends_on:
+        - naming-server
+  webapp-server:
+    image: sr2010sj/webapp-server:latest
+    ports: 
+        - "8765:8765"
+    depends_on:
+        - naming-server
+        - api-gateway-server
+  booking-server:
+    image: sr2010sj/booking-server
+    ports: 
+        - "8500:8500"
+    depends_on:
+        - naming-server
+        - api-gateway-server
+  user-server:
+    image: sr2010sj/user-server
+    ports: 
+        - "8000:8000"
+    depends_on:
+        - naming-server
+        - api-gateway-server

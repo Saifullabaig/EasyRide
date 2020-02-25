@@ -1,0 +1,18 @@
+<br>
+<div id="map" class="map">
+</div>
+<div class="spinner" *ngIf="showLoader">
+  <mat-spinner [diameter]="100"></mat-spinner>
+</div>
+
+
+    <!-- <button (click)="setCenter()">Go</button> -->
+    <form class="example-form" [formGroup]="choice">
+        <mat-form-field class="example-full-width">
+          <mat-label>Enter Destination</mat-label>
+          <input matInput placeholder="ex: kormangala,bengluru" formControlName="enterLocation">
+        </mat-form-field>
+      </form>
+    <button mat-raised-button color="primary"color="primary" (click)="setCenter()">Go</button>
+<div *ngIf="kmDistance !=null"> Distance is : {{kmDistance | number : '1.2'}} km and destination is : {{destination}}</div> 
+<button mat-button (click)="onNoClick()"  cdkFocusInitial>Ok</button>

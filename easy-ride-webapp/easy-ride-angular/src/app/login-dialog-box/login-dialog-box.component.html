@@ -1,0 +1,18 @@
+<mat-icon (click)="closeModal()" class="clear">clear</mat-icon>
+<div fxLayout="column" fxLayout.xs="column" fxLayoutAlign="space-evenly center" fxLayoutGap="2%">
+  <mat-dialog-content>
+    <h2 style="text-align:center" class="mat-h2">To continue</h2>
+    <!----For google login-->
+    <section>
+      <a (click)="closeModal()" href="/user/googlelogin">
+        <button class="sign-in-google" mat-raised-button><img class="google"
+            src="../../assets/images/google.jpg">&nbsp; Sign in with
+          Google
+        </button>
+      </a>
+    </section>
+    <!------>
+
+
+  </mat-dialog-content>
+</div>

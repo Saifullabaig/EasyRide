@@ -1,0 +1,100 @@
+<div fxLayoutAlign="center">
+  <mat-card class="example-card" fxFlex="50">
+    <form [formGroup]="booking_form">
+      <div fxLayout="row" fxLayoutAlign="space-between start">
+        <mat-form-field appearance="standard" fxFlex="40">
+          <mat-label>From</mat-label>
+          <input matInput formControlName="source" />
+        </mat-form-field>
+        <mat-form-field appearance="standard" fxFlex="40">
+          <mat-label>To</mat-label>
+          <input
+            matInput
+            placeholder="please search"
+            formControlName="destination"
+          />
+        </mat-form-field>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="space-between start">
+        <mat-form-field appearance="standard" fxFlex="40">
+          <mat-label>Trip Date</mat-label>
+          <input
+            matInput
+            placeholder="please search"
+            formControlName="pickDate"
+          />
+        </mat-form-field>
+        <mat-form-field appearance="standard" fxFlex="40">
+          <mat-label>TimeSlot</mat-label>
+          <input
+            matInput
+            placeholder="please search"
+            formControlName="pickTime"
+          />
+        </mat-form-field>
+      </div>
+      <div fxLayoutAlign="center">
+        <mat-form-field appearance="standard" fxFlex="40">
+          <mat-label>Distance[in km]</mat-label>
+          <input
+            matInput
+            placeholder="please search"
+            formControlName="distance"
+          />
+        </mat-form-field>
+      </div>
+    </form>
+  </mat-card>
+</div>
+<div class="select">
+  <p>Please select a driver of your choice</p>
+</div>
+<!-- for filter purpose -->
+<mat-chip-list
+  aria-label="Fish selection"
+  fxLayout="row wrap"
+  fxLayoutGap="10px"
+  fxLayoutAlign="space-around center"
+  class="flex"
+>
+  <mat-chip [selected]="filter === 0" (click)="Filter('all')"
+    >All Driver</mat-chip
+  >
+  <mat-chip [selected]="filter === 1" (click)="Filter('English')"
+    >English</mat-chip
+  >
+  <mat-chip [selected]="filter === 2" (click)="Filter('Hindi')">Hindi</mat-chip>
+  <mat-chip [selected]="filter === 3" (click)="Filter('Kannada')">
+    Kannada</mat-chip
+  >
+</mat-chip-list>
+<!-- for filter purpose -->
+
+<div
+  fxLayout="row wrap"
+  fxLayoutGap="10px"
+  fxLayoutAlign="space-around center"
+  class="flex"
+>
+  <div *ngFor="let item of drivers">
+    <app-driver-card [item]="item"></app-driver-card>
+  </div>
+</div>
+<div
+  *ngIf="priceRate > 0"
+  fxLayout="column wrap"
+  fxLayoutGap="10px"
+  fxLayoutAlign="center center"
+>
+  <div>Total Price for trip: {{ priceRate | currency: "&#8377;" }}</div>
+  <div
+    fxLayout="row wrap"
+    fxLayoutGap="10px"
+    fxLayoutAlign="space-around center"
+  >
+    <button mat-raised-button color="warn">cancel</button>
+    <button mat-raised-button color="primary" (click)="bookTickets()">
+      Continue to Payment
+    </button>
+  </div>
+</div>

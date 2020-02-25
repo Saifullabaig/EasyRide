@@ -1,0 +1,16 @@
+.sign-in-google {
+    width: 207px;
+    float: right;
+    margin-top: 12%;
+    margin-bottom: 1%;
+    font-weight: bold;
+}
+.google {
+    margin-left: -13%;
+    width: 23%;
+}
+
+.clear {
+    float: right;
+    cursor: pointer;
+}

@@ -1,0 +1,25 @@
+
+.example-card {
+    margin-top: 150px;
+   
+ 
+}
+.card{
+    background: url(src/assets/images/main1.jpg) no-repeat center center fixed; 
+    height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+    background-size: 100%;
+    }
+.icon{
+    margin-top:30px;
+    font-size: 45px;
+    }
+.search{
+    margin-top:30px;
+    
+}

@@ -1,0 +1,45 @@
+table {
+    width: 80%;
+    /* margin-top: 10px; */
+  }
+  
+  .mat-display-1{
+    margin-top: 40px;
+  }
+  .example-header-image {
+    background-image: url('https://www.iconbunny.com/icons/media/catalog/product/2/1/2133.12-driving-icon-iconbunny.jpg');
+    background-size: cover;
+  }
+
+  .mat-table {
+    overflow: auto;
+    max-height: 500px;
+  }
+
+   .mat-column-name{
+  border-right: 1px solid grey;
+  align-self: stretch;
+  text-align: center
+
+
+  }
+  .mat-column-position{
+  border-right: 1px solid grey;
+  align-self: stretch;
+  text-align: center;
+
+  }
+  .mat-column-weight{
+  border-right: 1px solid grey;
+  align-self: stretch;
+  text-align: center;
+
+  } 
+  .mat-column-symbol{
+
+  text-align: center;
+  align-self: stretch;
+  }
+ .mat-column-weight{
+     align-self: stretch;
+  }

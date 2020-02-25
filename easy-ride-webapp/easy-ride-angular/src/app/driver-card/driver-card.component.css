@@ -1,0 +1,29 @@
+.example-card {
+  width: 300px;
+  height: 60px;
+}
+
+.example-header-image {
+  background-image: url("https://www.iconbunny.com/icons/media/catalog/product/2/1/2133.12-driving-icon-iconbunny.jpg");
+  background-size: cover;
+}
+/* mat-icon{
+      color: yellow;
+  } */
+span.stars,
+span.stars span {
+  display: block;
+  /* Download the star image here: http://stackoverflow.com/questions/1987524/turn-a-number-into-star-rating-display-using-jquery-and-css */
+  background: url("https://apppresser.com/wp-content/uploads/2015/11/stars.png")
+    0 -16px repeat-x;
+  width: 80px;
+  height: 16px;
+}
+
+span.stars span {
+  background-position: 0 0;
+}
+
+.price {
+  margin-top: 2px;
+}

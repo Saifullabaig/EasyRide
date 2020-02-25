@@ -29,5 +29,6 @@ and after successful build, open the browser and hit `localhost:8080`
 * Application is not responsive
 * Deployment is not set to perticular domain.
 * Payment is a dummy form
+* If initially the trip details are not filled in the form and logged in directly then drivers data and auto fill form shows blank
   
 
